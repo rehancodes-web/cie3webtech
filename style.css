@@ -266,6 +266,14 @@ button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
     .stats-table, .team-table {
         width: 100%;
     }
+    .filter-box label {
+        display: block;
+        margin: 8px 0 4px 0;
+    }
+    .filter-box input, .filter-box select {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
 /* ---------- Logo ---------- */
