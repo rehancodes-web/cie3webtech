@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Paws - Our Dogs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>&#128062; Campus Paws &#128062;</h1>
+        <p>Helping the animals of our campus</p>
+    </div>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="dogs.html" class="active">Our Dogs</a>
+        <a href="report.html">Report a Problem</a>
+        <a href="about.html">About Us</a>
+    </div>
+
+    <div class="container">
+
+        <h2>Our Campus Dogs</h2>
+        <p>These are the dogs that live around our campus. Say hi if you see them!</p>
+
+        <!-- Search and filter -->
+        <div class="filter-box">
+            <label for="searchBox">Search by name:</label>
+            <input type="text" id="searchBox" placeholder="Type a name...">
+
+            <label for="locationFilter">Location:</label>
+            <select id="locationFilter">
+                <option value="All">All</option>
+            </select>
+
+            <label for="genderFilter">Gender:</label>
+            <select id="genderFilter">
+                <option value="All">All</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+        <p id="resultText"></p>
+
+        <!-- Dog cards will be added here by JavaScript -->
+        <div id="dogList" class="dog-list"></div>
+
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Campus Paws | Made with &hearts; by students</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

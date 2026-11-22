@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Paws - Report a Problem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>&#128062; Campus Paws &#128062;</h1>
+        <p>Helping the animals of our campus</p>
+    </div>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="dogs.html">Our Dogs</a>
+        <a href="report.html" class="active">Report a Problem</a>
+        <a href="about.html">About Us</a>
+    </div>
+
+    <div class="container">
+
+        <h2>Report a Problem</h2>
+        <p>Did you see a dog that is hurt, sick, hungry or in danger? Fill this form and upload a photo.</p>
+
+        <form id="reportForm">
+            <table class="form-table">
+                <tr>
+                    <td><label for="reporterName">Your Name:</label></td>
+                    <td><input type="text" id="reporterName" placeholder="Enter your name"></td>
+                </tr>
+                <tr>
+                    <td><label for="dogName">Dog's Name (if known):</label></td>
+                    <td>
+                        <select id="dogName">
+                            <option value="Unknown">I don't know</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="location">Location:</label></td>
+                    <td><input type="text" id="location" placeholder="e.g. Near Canteen"></td>
+                </tr>
+                <tr>
+                    <td><label for="problemType">Type of Problem:</label></td>
+                    <td>
+                        <select id="problemType">
+                            <option value="">-- Select --</option>
+                            <option value="Injured">Injured</option>
+                            <option value="Sick">Sick</option>
+                            <option value="Hungry">Hungry / Weak</option>
+                            <option value="Lost">Lost / New dog</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="photo">Upload Photo:</label></td>
+                    <td>
+                        <input type="file" id="photo" accept="image/*">
+                        <br>
+                        <img id="preview" class="preview" src="" alt="Photo preview">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="description">Describe the Problem:</label></td>
+                    <td>
+                        <textarea id="description" rows="5" placeholder="Write what is wrong with the dog..."></textarea>
+                        <br>
+                        <small id="charCount">0 / 300 characters</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Submit Report">
+                        <input type="reset" value="Clear">
+                    </td>
+                </tr>
+            </table>
+            <p id="formMessage"></p>
+        </form>
+
+        <hr>
+
+        <h2>Recent Reports</h2>
+        <div id="reportList">
+            <p>No reports yet.</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Campus Paws | Made with &hearts; by students</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
