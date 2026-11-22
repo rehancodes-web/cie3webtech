@@ -4,16 +4,16 @@
 // =============================================
 
 // ----- List of campus dogs -----
-// (Put the dog photos in the "images" folder with these names)
+// (The dog photos are in the "images" folder)
+// Names are not given yet, so every dog is "Not Named" for now
 var dogs = [
-    { name: "Bruno",  age: "3 years",  gender: "Male",   location: "Main Gate",        status: "Healthy",    photo: "images/dog1.jpg" },
-    { name: "Lucy",   age: "2 years",  gender: "Female", location: "Canteen",          status: "Healthy",    photo: "images/dog2.jpg" },
-    { name: "Tommy",  age: "5 years",  gender: "Male",   location: "Library",          status: "Needs Care", photo: "images/dog3.jpg" },
-    { name: "Kaalu",  age: "4 years",  gender: "Male",   location: "Boys Hostel",      status: "Healthy",    photo: "images/dog4.jpg" },
-    { name: "Snowy",  age: "1 year",   gender: "Female", location: "Girls Hostel",     status: "Healthy",    photo: "images/dog5.jpg" },
-    { name: "Rocky",  age: "6 years",  gender: "Male",   location: "Parking Lot",      status: "Needs Care", photo: "images/dog6.jpg" },
-    { name: "Daisy",  age: "8 months", gender: "Female", location: "Canteen",          status: "Healthy",    photo: "images/dog7.jpg" },
-    { name: "Sheru",  age: "3 years",  gender: "Male",   location: "Mechanical Block", status: "Healthy",    photo: "images/dog8.jpg" }
+    { id: "Dog 1", name: "Not Named", age: "Unknown", gender: "Unknown", location: "Cafe Mingos",      status: "Healthy", photo: "images/dog1.jpg" },
+    { id: "Dog 2", name: "Not Named", age: "Unknown", gender: "Unknown", location: "Cafe Mingos",      status: "Healthy", photo: "images/dog2.jpg" },
+    { id: "Dog 3", name: "Not Named", age: "Unknown", gender: "Unknown", location: "Grand Stairs",     status: "Healthy", photo: "images/dog3.jpg" },
+    { id: "Dog 4", name: "Not Named", age: "Unknown", gender: "Unknown", location: "Grand Stairs",     status: "Healthy", photo: "images/dog4.jpg" },
+    { id: "Dog 5", name: "Not Named", age: "Unknown", gender: "Unknown", location: "Library MM Foods", status: "Healthy", photo: "images/dog5.jpg" },
+    { id: "Dog 6", name: "Not Named", age: "Unknown", gender: "Unknown", location: "Big Mingos",       status: "Healthy", photo: "images/dog6.jpg" },
+    { id: "Dog 7", name: "Not Named", age: "Unknown", gender: "Unknown", location: "B Block",          status: "Healthy", photo: "images/dog7.jpg" }
 ];
 
 // Picture to show if the dog photo is not there yet
@@ -86,8 +86,9 @@ if (dogList != null) {
         for (var i = 0; i < dogs.length; i++) {
             var dog = dogs[i];
 
-            // check filters
-            if (dog.name.toLowerCase().indexOf(searchText) == -1) continue;
+            // check filters (search looks at the name and the location)
+            var searchIn = (dog.name + " " + dog.location).toLowerCase();
+            if (searchIn.indexOf(searchText) == -1) continue;
             if (selectedLocation != "All" && dog.location != selectedLocation) continue;
             if (selectedGender != "All" && dog.gender != selectedGender) continue;
 
@@ -100,12 +101,12 @@ if (dogList != null) {
             card.className = "dog-card";
             card.innerHTML =
                 "<img src='" + dog.photo + "' alt='" + dog.name + "' onerror=\"this.onerror=null; this.src=noPhoto;\">" +
-                "<h3>" + dog.name + "</h3>" +
+                "<h3>" + dog.name + " <small>(" + dog.id + ")</small></h3>" +
                 "<p><b>Location:</b> " + dog.location + "</p>" +
                 "<p><b>Age:</b> " + dog.age + "</p>" +
                 "<p><b>Gender:</b> " + dog.gender + "</p>" +
                 "<p><b>Status:</b> <span class='status " + statusClass + "'>" + dog.status + "</span></p>" +
-                "<button onclick=\"reportDog('" + dog.name + "')\">Report Problem</button>";
+                "<button onclick=\"reportDog('" + dog.id + "')\">Report Problem</button>";
 
             dogList.appendChild(card);
             count++;
@@ -127,8 +128,8 @@ if (dogList != null) {
 }
 
 // "Report Problem" button on a dog card -> go to report page with that dog selected
-function reportDog(name) {
-    window.location.href = "report.html?dog=" + encodeURIComponent(name);
+function reportDog(id) {
+    window.location.href = "report.html?dog=" + encodeURIComponent(id);
 }
 
 
@@ -149,8 +150,8 @@ if (reportForm != null) {
     // fill dog name dropdown
     for (var i = 0; i < dogs.length; i++) {
         var opt = document.createElement("option");
-        opt.value = dogs[i].name;
-        opt.innerHTML = dogs[i].name + " (" + dogs[i].location + ")";
+        opt.value = dogs[i].id;
+        opt.innerHTML = dogs[i].id + " (" + dogs[i].location + ")";
         dogSelect.appendChild(opt);
     }
 
@@ -165,7 +166,7 @@ if (reportForm != null) {
     // when a dog is chosen, put its usual location in the box
     function fillLocation() {
         for (var i = 0; i < dogs.length; i++) {
-            if (dogs[i].name == dogSelect.value) {
+            if (dogs[i].id == dogSelect.value) {
                 document.getElementById("location").value = dogs[i].location;
             }
         }

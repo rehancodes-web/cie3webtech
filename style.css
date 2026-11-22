@@ -267,3 +267,12 @@ button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
         width: 100%;
     }
 }
+
+/* ---------- Logo ---------- */
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+}
