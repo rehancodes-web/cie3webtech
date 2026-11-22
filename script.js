@@ -5,15 +5,15 @@
 
 // ----- List of campus dogs -----
 // (The dog photos are in the "images" folder)
-// Names are not given yet, so every dog is "Not Named" for now
+// Names are not given yet, so every dog is "Unnamed" for now
 var dogs = [
-    { id: "Dog 1", name: "Not Named", age: "Unknown", gender: "Unknown", location: "Cafe Mingos",      status: "Healthy", photo: "images/dog1.jpg" },
-    { id: "Dog 2", name: "Not Named", age: "Unknown", gender: "Unknown", location: "Cafe Mingos",      status: "Healthy", photo: "images/dog2.jpg" },
-    { id: "Dog 3", name: "Not Named", age: "Unknown", gender: "Unknown", location: "Grand Stairs",     status: "Healthy", photo: "images/dog3.jpg" },
-    { id: "Dog 4", name: "Not Named", age: "Unknown", gender: "Unknown", location: "Grand Stairs",     status: "Healthy", photo: "images/dog4.jpg" },
-    { id: "Dog 5", name: "Not Named", age: "Unknown", gender: "Unknown", location: "Library MM Foods", status: "Healthy", photo: "images/dog5.jpg" },
-    { id: "Dog 6", name: "Not Named", age: "Unknown", gender: "Unknown", location: "Big Mingos",       status: "Healthy", photo: "images/dog6.jpg" },
-    { id: "Dog 7", name: "Not Named", age: "Unknown", gender: "Unknown", location: "B Block",          status: "Healthy", photo: "images/dog7.jpg" }
+    { id: "Dog 1", name: "Unnamed", age: "Unknown", gender: "Female", location: "Cafe Mingos",      status: "Healthy", photo: "images/dog1.jpg" },
+    { id: "Dog 2", name: "Unnamed", age: "Unknown", gender: "Female", location: "Cafe Mingos",      status: "Healthy", photo: "images/dog2.jpg" },
+    { id: "Dog 3", name: "Unnamed", age: "Unknown", gender: "Female", location: "Grand Stairs",     status: "Healthy", photo: "images/dog3.jpg" },
+    { id: "Dog 4", name: "Unnamed", age: "Unknown", gender: "Female", location: "Grand Stairs",     status: "Healthy", photo: "images/dog4.jpg" },
+    { id: "Dog 5", name: "Unnamed", age: "Unknown", gender: "Male", location: "Library MM Foods", status: "Healthy", photo: "images/dog5.jpg" },
+    { id: "Dog 6", name: "Unnamed", age: "Unknown", gender: "Male", location: "Big Mingos",       status: "Healthy", photo: "images/dog6.jpg" },
+    { id: "Dog 7", name: "Unnamed", age: "Unknown", gender: "Male", location: "B Block",          status: "Healthy", photo: "images/dog7.jpg" }
 ];
 
 // Picture to show if the dog photo is not there yet
